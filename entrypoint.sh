@@ -22,7 +22,7 @@ if [ "${SSL}" = "TRUE" ]; then
  sed -i 's|</Service>|<Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol" maxHttpHeaderSize="8192" \
   SSLEnabled="true" maxThreads="150" minSpareThreads="25" enableLookups="false" disableUploadTimeout="true" acceptCount="100" \
   scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" useBodyEncodingForURI="true" keyAlias="'${KEYALIAS}'" \
-  keystoreFile="'${KEYSTORE_PATH}'" keystorePass='"${KEYSTORE_PASS}'" keystoreType="JKS"/>\n<!--SSLCONNECTOR_INSERT-->\n </Service>|g' \
+  keystoreFile="'${KEYSTORE_PATH}'" keystorePass="'${KEYSTORE_PASS}'" keystoreType="JKS"/>\n<!--SSLCONNECTOR_INSERT-->\n </Service>|g' \
   /opt/atlassian/atlassian-jira-software-${JIRA_VERSION}-standalone/conf/server.xml
   echo "SSL connector is registered"
 else
